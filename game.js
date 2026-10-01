@@ -433,7 +433,9 @@ updateHud();
 fit();
 requestAnimationFrame(frame);
 
+/* @test-hooks:start */
 // 테스트용
 window.__g = { get grid() { return grid; }, get state() { return state; }, get score() { return score; }, get slide() { return slide; },
   get undosLeft() { return undosLeft; }, tryMove, undo, update, draw, startGame, setGrid(rows) { grid = rows.map((r) => r.map((v) => (v ? L.tile(v) : null))); }, W, H, BTN };
+/* @test-hooks:end */
 })();

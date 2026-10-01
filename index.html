@@ -82,6 +82,9 @@
     #overlay .card { font-size:12px; padding:7px 12px; line-height:1.6; }
     #overlay button { font-size:19px; padding:8px 32px; }
   }
+  /* 기기에 맞는 설명만: 폰(손가락)은 .touch, PC(마우스·키보드)는 .pc */
+  .pc { display:none; }
+  @media (pointer:fine) { .pc { display:inline; } .touch { display:none; } }
 </style>
 </head>
 <body>
@@ -102,7 +105,7 @@
         <p>같은 숫자 둘을 <b>합쳐서 2048</b>을 만드세요!<br>밀 때마다 새 숫자가 하나씩 나와요</p>
         <button id="startBtn">시작하기</button>
         <div class="card">
-          👆 손가락으로 밀거나 ⌨️ 방향키·WASD로 이동<br>
+          <span class="touch">👆 손가락으로 밀어서 이동<br></span><span class="pc">⌨️ 방향키·WASD로 이동 · Z 되돌리기<br></span>
           ➕ 같은 숫자끼리 부딪치면 하나로 합쳐져요<br>
           ↩️ 되돌리기는 한 판에 3번<br>
           🏆 2048을 만든 뒤에도 계속할 수 있어요

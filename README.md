@@ -6,4 +6,4 @@
 - 같은 숫자 둘이 부딪치면 하나로 합쳐지고, 합쳐진 값이 점수가 된다
 - 되돌리기는 한 판에 3번 (Z), 2048을 만든 뒤에도 계속할 수 있다
 
-`index.html` 을 그대로 열면 된다. 판 규칙은 `logic.js`, 화면·입력은 `game.js`.
+`index.html` 을 그대로 열면 된다. 판 규칙은 `logic.js`(화면 없이 Node 로 시험할 수 있다: `node test/logic.test.js`), 화면·입력은 `game.js`.

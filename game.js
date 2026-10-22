@@ -1,4 +1,6 @@
 'use strict';
+// 오락실 튜토리얼이 '진짜로 일어난 일'을 알아채는 신호 (arcade/public/tutorial.js 가 듣는다. 튜토리얼이 아니면 아무도 안 듣는다)
+const tutorialSignal = (type) => window.dispatchEvent(new CustomEvent('arcade:tutorial', { detail: { type } }));
 
 // 2048: 화면·입력·흐름. 판 규칙은 logic.js (LOGIC) 에 있다.
 (() => {
@@ -144,6 +146,7 @@ function tryMove(dir) {
   const before = [];
   for (let r = 0; r < SIZE; r++) for (let c = 0; c < SIZE; c++) if (grid[r][c]) before.push({ id: grid[r][c].id, v: grid[r][c].v, from: [r, c] });
   const res = L.move(grid, dir);
+  tutorialSignal('move');
   const target = new Map(res.moves.map((m) => [m.id, m.to]));
   const items = before.map((b) => ({ v: b.v, from: b.from, to: target.get(b.id) || b.from }));
   const sp = L.spawn(grid);

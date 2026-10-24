@@ -8,10 +8,11 @@ const L = LOGIC;
 const { SIZE } = L;
 
 // ---------- 모양 ----------
-const W = 400, H = 540;
+const W = 400, H = 514;
 const CELL = 80, GAP = 10, PAD = 10;
 const BW = SIZE * CELL + (SIZE - 1) * GAP + PAD * 2;        // 판 한 변
-const BX = (W - BW) / 2, BY = 78;
+const BTN_Y = 70;                                           // 되돌리기·새 게임 버튼 줄 (제목 줄 아래, 판 위)
+const BX = (W - BW) / 2, BY = 128;
 const INK = '#2b1d52';
 const FONT = '"Jua", "Apple SD Gothic Neo", sans-serif';
 const EMOJI = '"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif';
@@ -21,8 +22,8 @@ const UNDOS = 3;
 const SWIPE = 24;              // 이만큼(화면 픽셀) 밀면 한 수
 
 const BTN = {
-  undo: { x: 15, y: BY + BW + 22, w: 180, h: 46 },
-  again: { x: W - 15 - 180, y: BY + BW + 22, w: 180, h: 46 },
+  undo: { x: 15, y: BTN_Y, w: 180, h: 46 },
+  again: { x: W - 15 - 180, y: BTN_Y, w: 180, h: 46 },
 };
 
 // 타일 색: 작은 수는 따뜻한 색, 커질수록 붉고 보랏빛으로
